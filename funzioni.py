@@ -16,10 +16,10 @@ def main():
                 Quando=input("Che giorno della settimana: ")
                 NomeP=input("Quando è il pasto: ")
                 Nome=input("Come si chiama il pasto: ")
-                Callorie=input("Le calorie: ")
-                Proteine=input("Le proteine: ")
-                Carboidrati=input("I carboidrati: ")
-                Grassi=input("I Grassi: ")
+                Callorie=int(input("Le calorie: "))
+                Proteine=int(input("Le proteine: "))
+                Carboidrati=int(input("I carboidrati: "))
+                Grassi=int(input("I Grassi: "))
 
                 alimento=Alimento(Nome,Callorie,Proteine,Carboidrati,Grassi)
                 pasto=Pasto(NomeP,Quando,alimento)
@@ -28,34 +28,9 @@ def main():
                 diario.saveAlimento()
 
             elif scelta == '2':
-                         
+                print("le calorie totali sono: " + diario.getCalorie())         
             elif scelta == '3':
-                Nome=input("Inserisci il nome: ")
-                Cognome=input("Inserisci il cognome: ")
-                Email=input("Inserisci il email: ")
-                Data=input("Inserisci il la data: ")
-                Ora=input("Inserisci l'ora: ")
-                Servizio=input("Inserisci il tipo di servizio: ")
-
-                cliente=Cliente(Nome,Cognome,Email)
-                appuntamento=Appuntamento(Data,Ora,Servizio,cliente)
-                salone.delUtente(appuntamento)  
-
-                print("Adesso Re-inserisci i dati: ")
-
-                Nome=input("Inserisci il nome: ")
-                Cognome=input("Inserisci il cognome: ")
-                Email=input("Inserisci il email: ")
-                Data=input("Inserisci il la data: ")
-                Ora=input("Inserisci l'ora: ")
-                Servizio=input("Inserisci il tipo di servizio: ")
-
-                cliente=Cliente(Nome,Cognome,Email)
-                appuntamento=Appuntamento(Data,Ora,Servizio,cliente)
-
-                salone.aggUtente(appuntamento)  
-                salone.saveUtente()
-
+                print()
             elif scelta == '4':
                 print("Uscita dal programma.")
                 break
