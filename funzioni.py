@@ -30,7 +30,7 @@ def main():
             elif scelta == '2':
                 print("le calorie totali sono: " + diario.getCalorie())         
             elif scelta == '3':
-                print()
+                print(diario.visualizzaTutto())
             elif scelta == '4':
                 print("Uscita dal programma.")
                 break

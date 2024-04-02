@@ -53,20 +53,32 @@ class Diario:
         return risultato
 
     def getCalorie(self):
-        alimenti = []
+        a = []
         with open(self.locazioneFile, "r+") as a:
             stringaDalFile = a.read()
             jsonRecuperato = json.loads(stringaDalFile)
             for singoloPasto in jsonRecuperato:
                 alimento = Alimento(singoloPasto["alimenti"]["nome"], singoloPasto["alimenti"]["calorie"], singoloPasto["alimenti"]["proteine"], singoloPasto["alimenti"]["carboidrati"], singoloPasto["alimenti"]["grassi"])
-                alimenti.append(alimento)
+                a.append(alimento)
 
-            for alimento in alimenti:
+            for alimento in a:
                 somma_calorie = alimento.calorie
                 somma_proteine = alimento.proteine
                 somma_carboidrati = alimento.carboidrati
                 somma_grassi = alimento.grassi
 
-            a =somma_calorie+somma_carboidrati+somma_proteine+somma_grassi
-        return a
+            b =somma_calorie+somma_carboidrati+somma_proteine+somma_grassi
+        return b
             
+    def visualizzaTutto(self):
+        with open(self.locazioneFile, "r") as file:
+            jsonRecuperato = json.load(file)
+            for singoloPasto in jsonRecuperato:
+                print("Quando:", singoloPasto["Quando"])
+                print("NomeP:", singoloPasto["NomeP"])
+                print("Alimento:")
+                print("  Nome:", singoloPasto["alimenti"]["nome"])
+                print("  Calorie:", singoloPasto["alimenti"]["calorie"])
+                print("  Proteine:", singoloPasto["alimenti"]["proteine"])
+                print("  Carboidrati:", singoloPasto["alimenti"]["carboidrati"])
+                print("  Grassi:", singoloPasto["alimenti"]["grassi"])
