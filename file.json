@@ -1,4 +1,5 @@
-[    {
+[
+    {
         "Quando": "giovedi",
         "NomeP": "mattina",
         "alimenti": {
@@ -7,6 +8,17 @@
             "proteine": 4,
             "grassi": 56,
             "calorie": 15
+        }
+    },
+    {
+        "Quando": "mercoledi",
+        "NomeP": "pranzo",
+        "alimenti": {
+            "nome": "carne",
+            "carboidrati": 23,
+            "proteine": 65,
+            "grassi": 89,
+            "calorie": 54
         }
     }
 ]

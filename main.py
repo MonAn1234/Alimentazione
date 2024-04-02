@@ -1,0 +1,3 @@
+from funzioni import *
+
+main()
