@@ -1,7 +1,7 @@
 class Pasto:
-    def __init__(self, Nome, Quando, Alimento):
+    def __init__(self, NomeP, Quando, Alimento):
         self.Quando=Quando
-        self.Nome=Nome
+        self.NomeP=NomeP
         self.Alimento=Alimento
         self.listaDiPasti=[]
 
