@@ -1,0 +1,34 @@
+Traccia 2:
+
+Diario Alimentare Personale
+
+Obiettivo:
+
+Creare un programma Python che aiuti gli utenti a tenere traccia della loro dieta settimanale(Lun-Dom). 
+Il programma deve essere basato su OOP e deve utilizzare file JSON per la persistenza dei dati, oltre a includere 
+costrutti condizionali e iterativi.
+
+Requisiti Specifici:
+
+Classi OOP:
+
+Alimento: rappresenta un alimento con nome, calorie, proteine, carboidrati, e grassi.
+Pasto: gestisce un insieme di alimenti consumati in un singolo pasto.
+Diario: archivia e organizza i pasti giornalieri dell'utente.
+
+Gestione del File JSON:
+
+Caricare e salvare il diario alimentare in un file JSON, all’apertura e chiusura del programma.
+
+Funzionalità del Programma:
+
+Interfaccia testuale per inserire nuovi alimenti e pasti.
+Calcolare il totale giornaliero delle calorie.
+Visualizzare un riassunto settimanale dell'assunzione alimentare.
+
+Versionamento con GIT:
+
+Mantenere un registro delle modifiche attraverso GIT, con branch per le funzionalità e commit descrittivi.
+
+Il programma deve essere ben commentato e strutturato secondo i principi di pulizia e chiarezza del codice. 
+Il versionamento dovrebbe riflettere uno sviluppo logico e incrementale del progetto.
