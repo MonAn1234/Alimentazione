@@ -7,19 +7,22 @@ class Diario:
         self.pagina=[]
 
 
+
     def caricaAlimentazione(self):
         try:
             with open(self.locazioneFile, "r+") as a:
                 stringaDalFile = a.read()
                 jsonRecuperato = json.loads(stringaDalFile)
-
                 for singoloPasto in jsonRecuperato:
-                    alimento = Alimento(singoloPasto["nome"],singoloPasto["calorie"], singoloPasto["proteine"], singoloPasto["carboidrati", singoloPasto["grassi"]])
-                    pasto = Pasto(singoloPasto["nome"], singoloPasto["quando"])
-                    self.pagina.append(pasto, alimento)
+                    alimento=Alimento(singoloPasto["alimenti"]["nome"],singoloPasto["alimenti"]["calorie"],singoloPasto["alimenti"]["proteine"],singoloPasto["alimenti"]["carboidrati"],singoloPasto["alimenti"]["grassi"])                    
+                    pasto=Pasto(singoloPasto["NomeP"],singoloPasto["Quando"],alimento)
+                    self.pagina.append(pasto)
                 pass
         except FileNotFoundError:
             print("FILE NON TROVATO")
+        except Exception as e:
+            print("eccezzione generica: "+ e)
+            pass
 
     def aggAlimento(self, appuntamento):
         self.pagina.append(appuntamento)
@@ -32,32 +35,19 @@ class Diario:
     
     def getJSON(self):
         risultato = []
-        for Pasto in self.utente:
+        for pasto in self.pagina:
             risultato.append(
                 {
-                    Pasto.Quando:{
-                        Pasto.nome:{
-                            "nome":Alimento.nome,
-                            "calorie":Alimento.calorie,
-                            "proteine":Alimento.proteine,
-                            "carboidrati":Alimento.carboidrati,
-                            "grassi":Alimento.grassi
-                        },
-                        "pranzo":{
-                            "nome":Alimento.nome,
-                            "calorie":Alimento.calorie,
-                            "proteine":Alimento.proteine,
-                            "carboidrati":Alimento.carboidrati,
-                            "grassi":Alimento.grassi
-                        },
-                        "cena":{
-                            "nome":Alimento.nome,
-                            "calorie":Alimento.calorie,
-                            "proteine":Alimento.proteine,
-                            "carboidrati":Alimento.carboidrati,
-                            "grassi":Alimento.grassi
-                        },
-                    },
+                    "Quando": pasto.Quando,
+                    "NomeP": pasto.NomeP,
+                    "alimenti": {
+                        "nome": pasto.Alimento.nome,
+                        "carboidrati":pasto.Alimento.carboidrati,
+                        "proteine": pasto.Alimento.proteine,
+                        "grassi": pasto.Alimento.grassi,
+                        "calorie": pasto.Alimento.calorie
+                     
+                     36   }
                 }
             )
         return risultato
