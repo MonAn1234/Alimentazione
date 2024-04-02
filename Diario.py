@@ -69,15 +69,18 @@ class Diario:
         with open(self.locazioneFile, "r") as file:
             # Apre il file JSON in modalità di lettura
             jsonRecuperato = json.load(file)
+            a=input("che giorno della settimana vuoi controllare? ")
             for singoloPasto in jsonRecuperato:
-                # Calcola la somma totale delle calorie, proteine, carboidrati e grassi di tutti i pasti
-                alimento = Alimento(singoloPasto["alimenti"]["nome"], singoloPasto["alimenti"]["calorie"],
-                                    singoloPasto["alimenti"]["proteine"], singoloPasto["alimenti"]["carboidrati"],
-                                    singoloPasto["alimenti"]["grassi"])
-                somma_calorie += alimento.calorie
-                somma_proteine += alimento.proteine
-                somma_carboidrati += alimento.carboidrati
-                somma_grassi += alimento.grassi
+                ## Controlla se il giorno del pasto corrisponde al giorno specificato dall'utente
+                if singoloPasto["Quando"] == a:
+                    # Calcola la somma totale delle calorie, proteine, carboidrati e grassi di tutti i pasti
+                    alimento = Alimento(singoloPasto["alimenti"]["nome"], singoloPasto["alimenti"]["calorie"],
+                                        singoloPasto["alimenti"]["proteine"], singoloPasto["alimenti"]["carboidrati"],
+                                        singoloPasto["alimenti"]["grassi"])
+                    somma_calorie += alimento.calorie
+                    somma_proteine += alimento.proteine
+                    somma_carboidrati += alimento.carboidrati
+                    somma_grassi += alimento.grassi
         # Restituisce la somma totale delle calorie, proteine, carboidrati e grassi
         return somma_calorie + somma_proteine + somma_carboidrati + somma_grassi
             
