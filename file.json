@@ -1,24 +1,12 @@
-[
-    {
-        "Quando": "lunedi",
-        "NomeP": "colazione",
+[    {
+        "Quando": "giovedi",
+        "NomeP": "mattina",
         "alimenti": {
             "nome": "latte",
-            "carboidrati": "12",
-            "proteine": "12",
-            "grassi": "12",
-            "calorie": "12"
-        }
-    },
-    {
-        "Quando": "martedi",
-        "NomeP": "cena",
-        "alimenti": {
-            "nome": "carne",
-            "carboidrati": "123",
-            "proteine": "123",
-            "grassi": "123",
-            "calorie": "123"
+            "carboidrati": 5,
+            "proteine": 4,
+            "grassi": 56,
+            "calorie": 15
         }
     }
 ]

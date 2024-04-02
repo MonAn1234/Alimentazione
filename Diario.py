@@ -47,7 +47,26 @@ class Diario:
                         "grassi": pasto.Alimento.grassi,
                         "calorie": pasto.Alimento.calorie
                      
-                     36   }
+                    }
                 }
             )
         return risultato
+
+    def getCalorie(self):
+        alimenti = []
+        with open(self.locazioneFile, "r+") as a:
+            stringaDalFile = a.read()
+            jsonRecuperato = json.loads(stringaDalFile)
+            for singoloPasto in jsonRecuperato:
+                alimento = Alimento(singoloPasto["alimenti"]["nome"], singoloPasto["alimenti"]["calorie"], singoloPasto["alimenti"]["proteine"], singoloPasto["alimenti"]["carboidrati"], singoloPasto["alimenti"]["grassi"])
+                alimenti.append(alimento)
+
+            for alimento in alimenti:
+                somma_calorie = alimento.calorie
+                somma_proteine = alimento.proteine
+                somma_carboidrati = alimento.carboidrati
+                somma_grassi = alimento.grassi
+
+            a =somma_calorie+somma_carboidrati+somma_proteine+somma_grassi
+        return a
+            
